@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RazorDemo.Models.clsBook>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.bookId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.bookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { BookId = item.bookId }) |
+            @Html.ActionLink("Details", "Details", new { BookId = item.bookId  }) |
+            @Html.ActionLink("Delete", "Delete", new { bookId = item.bookId  })
+            @ViewBag.Message
+        </td>
+    </tr>
+}
+
+</table>
+
+@*@section footer{
+<span> © 2019, My book inventory </span>
+    }*@
+
+@section somescript{
+<script src="~/Scripts/common.js">
+
+</script>
+}

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Book Inventory";
+}
+
+<h2>Book Inventory</h2>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Author</td>
+    </tr>
+        @foreach(var book in Model)
+        {
+    <tr>
+        <td>@book.bookId</td>
+        <td>@book.bookName</td>
+        <td>@book.Author</td>
+    </tr>
+        }
+</table>

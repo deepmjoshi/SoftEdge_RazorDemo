@@ -1,0 +1,30 @@
+﻿@using RazorDemo.Models;
+
+@Html.Partial("_PartialHeadquarterAddress")
+@Html.Partial("_PartialEmailAddresses")
+
+@*@{
+        List<ModelAddress> lstaddress = ModelAddress.GetAllFranchiseAddresses();
+    }*@
+
+@*@foreach (ModelAddress address in lstaddress)
+    {
+    <address>
+       Country: @address.Country<br />
+       State: @address.State<br />
+       Address1: @address.Address1<br />
+       Address2:  @address.Address2<br />
+       Contact No:  <abbr title="Phone">@address.ContactNo</abbr>
+    </address>
+    }*@
+
+@foreach (ModelAddress address in Model)
+{
+    <address>
+        Country: @address.Country<br />
+        State: @address.State<br />
+        Address1: @address.Address1<br />
+        Address2:  @address.Address2<br />
+        Contact No:  <abbr title="Phone">@address.ContactNo</abbr>
+    </address>
+}
